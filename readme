@@ -1,0 +1,20 @@
+# Week 1 — HTML5, CSS3 & Responsive Web Design
+
+## Project: Orbit Log
+A mission-control themed dashboard tracking rocket launches, featured missions, and a mission-watch sign-up log. Built as the running project for this internship — designed to be extended with JavaScript (Week 2), React (Week 3), TypeScript + Tailwind (Week 4), and live API data (Week 5).
+
+| Day | Focus | Status |
+|-----|-------|--------|
+| Day 1 | HTML5 Foundations | ✅ Complete |
+| Day 2 | CSS Fundamentals | ✅ Complete |
+| Day 3 | Modern CSS Layout (Flexbox/Grid) | ⏳ Upcoming |
+| Day 4 | Responsive Web Design | ⏳ Upcoming |
+| Day 5 | Weekly Project & Revision | ⏳ Upcoming |
+
+## Folder Guide
+Each `Day X` folder contains:
+- **Tasks/** — topics covered that day
+- **Assignments/** — the hands-on assignment description and what was built
+- **Project Files/** — the actual working code for that day
+
+The most up-to-date, fully working version of the project is always in the **latest completed day's** `Project Files` folder.
