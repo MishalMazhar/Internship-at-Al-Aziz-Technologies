@@ -13,5 +13,4 @@
 - `logbook` section — a full `form` (text, email, select, radio, textarea, submit button, all paired with `label`s)
 - `footer`
 
-No CSS is applied yet — see `Project Files/index.html` for the raw structure.
-The styled version of this same page lives in **Week 1 / Day 2 / Project Files**.
+
