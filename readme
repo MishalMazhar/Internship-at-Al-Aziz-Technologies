@@ -5,11 +5,11 @@ A mission-control themed dashboard tracking rocket launches, featured missions, 
 
 | Day | Focus | Status |
 |-----|-------|--------|
-| Day 1 | HTML5 Foundations | ✅ Complete |
-| Day 2 | CSS Fundamentals | ✅ Complete |
-| Day 3 | Modern CSS Layout (Flexbox/Grid) | ⏳ Upcoming |
-| Day 4 | Responsive Web Design | ⏳ Upcoming |
-| Day 5 | Weekly Project & Revision | ⏳ Upcoming |
+| Day 1 | HTML5 Foundations | Complete |
+| Day 2 | CSS Fundamentals | Complete |
+| Day 3 | Modern CSS Layout (Flexbox/Grid) | Upcoming |
+| Day 4 | Responsive Web Design | Upcoming |
+| Day 5 | Weekly Project & Revision | Upcoming |
 
 ## Folder Guide
 Each `Day X` folder contains:
