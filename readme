@@ -1,20 +1,19 @@
 # Week 1 — HTML5, CSS3 & Responsive Web Design
 
 ## Project: Orbit Log
-A mission-control themed dashboard tracking rocket launches, featured missions, and a mission-watch sign-up log. Built as the running project for this internship — designed to be extended with JavaScript (Week 2), React (Week 3), TypeScript + Tailwind (Week 4), and live API data (Week 5).
+A mission-control style dashboard for tracking rocket launches, featured missions, and a mission-watch sign-up log. This is the running project for the whole internship — it started as plain HTML this week and is meant to keep evolving through JS, React, TypeScript, and a real API later on.
 
 | Day | Focus | Status |
 |-----|-------|--------|
-| Day 1 | HTML5 Foundations | Complete |
-| Day 2 | CSS Fundamentals | Complete |
-| Day 3 | Modern CSS Layout (Flexbox/Grid) | Upcoming |
-| Day 4 | Responsive Web Design | Upcoming |
-| Day 5 | Weekly Project & Revision | Upcoming |
+| Day 1 | HTML5 Foundations | Done |
+| Day 2 | CSS Fundamentals | Done |
+| Day 3 | Modern CSS Layout (Flexbox/Grid) | Done |
+| Day 4 | Responsive Web Design | Done |
+| Day 5 | Weekly Project & Revision | Not started |
 
-## Folder Guide
-Each `Day X` folder contains:
-- **Tasks/** — topics covered that day
-- **Assignments/** — the hands-on assignment description and what was built
-- **Project Files/** — the actual working code for that day
+## How each day builds on the last
 
-The most up-to-date, fully working version of the project is always in the **latest completed day's** `Project Files` folder.
+- **Day 1** — just structure, no styling. Semantic HTML, a table, a form.
+- **Day 2** — added `style.css`, gave it a mission-control look (dark background, orange/cyan accents, custom fonts).
+- **Day 3** — rebuilt the nav as Flexbox, added a stats row using Flexbox cards, turned the mission list into a real CSS Grid.
+- **Day 4** — made it actually responsive: breakpoints, a working mobile nav without JavaScript, scalable type, a scrollable table on small screens.
