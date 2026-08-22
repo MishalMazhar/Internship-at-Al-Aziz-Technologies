@@ -1,0 +1,17 @@
+# Day 5 
+
+**Task:** Go back over everything from this week, finish up the project, and get it ready to show.
+
+## What I actually did
+
+Today wasn't about learning something new, it was more like cleaning up after myself. I went back through the whole week — HTML on Monday, CSS on Tuesday, Flexbox and Grid on Wednesday, making it responsive on Thursday and just checked that everything still worked together instead of being four separate versions that don't quite match.
+
+I opened the page at a bunch of different screen sizes again just to double check nothing broke since Day 4. Also went through it with just the keyboard, tabbing through links and form fields, since that's something I only really started paying attention to on Day 4 and wanted to make sure I didn't miss anything.
+
+Looking back at the whole week, the thing that actually changed how I think about CSS was Flexbox. Before that, everything was just margins and padding and hoping things lined up. After Flexbox, I stopped fighting the layout and started just telling it what I wanted, which sounds simple but felt like a totally different way of working.
+
+The mobile nav menu was probably the part I'm proudest of, mostly because I didn't have JavaScript to fall back on and still got it working with just a hidden checkbox and some CSS. It's a bit of a workaround, but it works, and I understand why it works, which feels more important than just having it work.
+
+Wrote up the README for each day so someone (or future me) can actually see what I was thinking, not just look at finished code and guess. Pushed everything to GitHub, README included, so the repo actually reflects a full week's worth of work in order.
+
+Next week is JavaScript, so this project stops being static and actually starts doing things. Kind of excited and a little nervous about that.
