@@ -1,0 +1,34 @@
+# Day 2 
+
+**Task:** Solve logical programming problems. Create reusable JavaScript functions.
+
+## What I actually did
+
+Two files again, same idea as yesterday one for practice, one for stuff I'll actually keep.
+
+**`js/logic-exercises.js`** is the practice one. If/else logic for checking a launch status, a switch statement for turning an agency name into a short code, a fake countdown using a `for` loop, a fuel-draining example using `while` just to see the difference between the two, and a quick example of `forEach` to actually use a callback instead of just reading about what one is.
+
+**`js/mission-functions.js`** is the one that matters. These are actual functions built for the real project:
+
+- `getStatusLabel()` — turns "go" into "Go", "review" into "Under Review", that kind of thing
+- `formatLaunchDate()` — turns "2026-09-14" into "Sep 14, 2026" so it's actually readable
+- `filterLaunchesByStatus()` — pulls out only the launches matching one status, for a filter feature later
+- `sortLaunchesByDate()` — sorts launches soonest-first without messing up the original list
+- `buildAlertMessage()` — puts together the confirmation text for the sign-up form
+
+I tested every one of these with `console.log` before considering it done. None of them touch the actual webpage yet — no DOM, no click handlers, nothing visible changes. That's on purpose, same reasoning as always: prove the logic works on its own first, wire it into the page later.
+
+## Login, sign up, and forgot password pages
+
+Also added three new pages today `login.html`, `signup.html`, and `forgot-password.html` plus a shared `auth.css` for styling them consistently with the rest of the site.
+
+Being honest about what this actually is: these are **frontend only**. There's no backend, no database, no real authentication happening. Submitting the login form doesn't check anything against a real account because there isn't one yet. I added a small note directly on each page saying exactly that, instead of letting it look like it works when it doesn't.
+
+What I did build for real:
+- A login page with email, password, a "remember me" checkbox, and a link to forgot password
+- A sign up page with name, email, password, and confirm password, plus a little password-strength bar (visual only right now, not wired to anything)
+- A forgot password page that just asks for an email and explains what a reset link would normally do
+- All three share one card-style layout so they feel like the same product instead of three random forms
+- Added a "Sign In" link to the main site's nav bar so these pages are actually reachable, including inside the mobile menu
+
+This is technically ahead of where the curriculum has me login/register interfaces are officially a Week 5 topic, once real form validation and authentication concepts get covered. I built the frontend for it now mostly because it was asked for directly, but I'm keeping the scope honest: this is UI and layout practice, not working authentication. The real validation logic and any backend connection will come later when I actually know how to do it properly, instead of faking it now with something that looks functional but isn't.
