@@ -1,0 +1,17 @@
+# Day 1
+
+**Task:** Solve JavaScript programming exercises. Work with arrays and objects.
+
+## What I actually did
+
+I split this into two files instead of cramming everything into one.
+
+**`js/exercises.js`** is just practice variables, checking types with `typeof`, template literals (the backtick strings with `${}` inside them, which are so much nicer than gluing strings together with `+`), the string-plus-number trap I mentioned above, and some basic array and object stuff like pushing a new item into a list and adding a new property onto an object after it's already been created.
+
+**`js/mission-data.js`** is the one I actually care about. I took all the mission and launch info that's currently just typed straight into `index.html` mission names, categories, agencies, launch dates, statuses — and rewrote it as real JavaScript arrays of objects. It looks almost identical to the HTML content, just structured as data instead of markup.
+
+The reason that matters: right now if I want to add a new mission, I have to go copy-paste a whole card block in the HTML. Once this data lives in a proper array, adding a mission later (once I learn the DOM) will just mean adding one object to the array and the page updates itself. That's the whole point of learning this before touching the DOM — get the data modeled correctly first, wire it up later.
+
+Also worth mentioning: I gave the whole site a visual pass today too — added a proper call-to-action button in the nav, a small "live dashboard" badge in the hero, a new "How It Works" section explaining the three-step idea behind the site, and gave the mission cards a category label and a link. None of that is JavaScript, it's still just HTML and CSS, but it made the site feel like an actual product instead of a school assignment, which felt worth doing before piling more features on top of it.
+
+Neither JS file is linked into `index.html` yet. They're just sitting in the `js/` folder, ready for Day 4.
