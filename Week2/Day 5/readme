@@ -1,0 +1,36 @@
+# Day 5 
+
+**Task:** Review the week, finish the project, get it ready to show.
+
+## What I actually did
+
+Went through the whole week's code with fresh eyes instead of trusting that "it worked when I wrote it" meant "it's still fine." Found the two accessibility gaps mentioned in the Tasks notes (`aria-pressed` on filters, `aria-invalid` on form fields) and the missing nav link to the Live Data section, fixed all three.
+
+Also double-checked the boring-but-important stuff:
+- Every JS file passes `node --check` with no syntax errors
+- Every `getElementById`/`querySelector` call in `main.js` matches a real ID that actually exists in `index.html` — checked this by pulling both lists and diffing them by hand, not just assuming
+- Ran the data functions through Node one more time with the real project data and got the same numbers as what's on the page: 4 missions, 3 agencies, 4 launches, next launch "Sep 14"
+
+## Clean JavaScript structure
+
+By the end of the week the `js/` folder has seven files, and I want to be upfront about what each one actually is instead of just listing filenames:
+
+- **`exercises.js`** (Day 1) and **`logic-exercises.js`** (Day 2) and **`exercises-day3.js`** (Day 3) pure practice, not used by the site at all. Kept them in the repo on purpose as a record of what I was learning each day, not because the site needs them.
+- **`mission-data.js`** — the real data (missions, launches)
+- **`mission-functions.js`** — reusable logic (status labels, date formatting, filtering, sorting, the alert message builder)
+- **`data-processing.js`** — the stats calculations
+- **`main.js`** — the only file that actually touches the DOM. Everything else is pure functions with no side effects, which made `main.js` a lot easier to write since I wasn't debugging data problems and DOM problems at the same time.
+
+That split — practice files, data, logic, and DOM all separated — wasn't an accident. It's the same shape a real app takes once it gets more complex, and it's a lot easier to keep that structure from day one than to try to untangle one giant file later.
+
+## Responsive + interaction testing
+
+Retested at 1440px, 768px, and 375px. Confirmed the filter buttons, save buttons, and form validation all work with touch taps on a narrow layout, not just mouse clicks on desktop. Tabbed through the whole page with just the keyboard again, including the newly-added filter buttons and the mission save buttons.
+
+## What this project can now actually do
+
+Starting from a static HTML page in Week 1, Orbit Log can now: render its own content from data, let you filter the launch schedule, save missions you care about (and remember that after a refresh), validate a real form with real error messages, and pull live data from an actual public API. None of it existed a week ago.
+
+## What's next
+
+Week 3 is React a lot of what `main.js` does by hand (creating elements, updating the DOM when data changes) is exactly what React exists to make less painful. Curious to see how much of this logic carries over versus how much gets rebuilt from scratch.
