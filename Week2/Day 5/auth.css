@@ -1,0 +1,194 @@
+/* ==========================================================
+   AUTH PAGES — login, sign up, forgot password
+   Loaded after style.css, reuses the same theme + starfield.
+========================================================== */
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #8E99B3;
+    margin-bottom: 30px;
+    transition: color 0.2s ease;
+}
+
+.auth-back:hover {
+    color: #FF7A33;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    background-color: rgba(15, 23, 40, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid #1E2A44;
+    border-radius: 10px;
+    padding: 40px 36px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header .mission-patch {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 18px;
+}
+
+.auth-header .mission-patch img {
+    width: 26px;
+    height: 26px;
+}
+
+.auth-header h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: #8E99B3;
+    font-size: 14px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 18px;
+}
+
+.auth-form label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #8E99B3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+
+.auth-form input {
+    width: 100%;
+    background-color: #0F1728;
+    border: 1px solid #1E2A44;
+    border-radius: 4px;
+    padding: 12px 14px;
+    color: #F2F4F8;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #FF7A33;
+}
+
+.auth-form input:invalid:not(:placeholder-shown) {
+    border-color: #F87171;
+}
+
+.field-hint {
+    font-size: 12px;
+    color: #5A6480;
+    margin-top: 6px;
+}
+
+.auth-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    font-size: 13px;
+}
+
+.auth-remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8E99B3;
+}
+
+.auth-remember input {
+    width: auto;
+    accent-color: #FF7A33;
+}
+
+.auth-link {
+    color: #FF7A33;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.auth-submit {
+    width: 100%;
+    text-align: center;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 26px 0;
+    color: #5A6480;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #1E2A44;
+}
+
+.auth-footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: #8E99B3;
+}
+
+.auth-note {
+    margin-top: 24px;
+    padding: 14px 16px;
+    background-color: rgba(255, 122, 51, 0.08);
+    border: 1px solid #3A2E10;
+    border-radius: 6px;
+    font-size: 12.5px;
+    color: #8E99B3;
+    line-height: 1.5;
+}
+
+.auth-note strong {
+    color: #FF7A33;
+}
+
+.password-strength {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.password-strength span {
+    height: 3px;
+    flex: 1;
+    background-color: #1E2A44;
+    border-radius: 2px;
+}
