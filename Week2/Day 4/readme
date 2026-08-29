@@ -1,0 +1,20 @@
+# Day 3 
+
+**Task:** Build data-processing exercises using arrays and objects.
+
+## What I actually did
+
+**`js/exercises-day3.js`** covers all the new syntax on its own — destructuring, spread, rest, default parameters, all six array methods, object methods (`Object.keys`, `Object.values`, `Object.entries`), optional chaining, and nullish coalescing. I ran it with `node exercises-day3.js` in the terminal to actually check the output instead of just assuming it worked, and it matched what I expected for every single example.
+
+**`js/data-processing.js`** is the real one. It takes the actual mission and launch data from Day 1's `mission-data.js` and calculates:
+
+- `countMissions()` — how many missions total
+- `countUniqueAgencies()` — unique agency count, using a `Set` to drop duplicates
+- `countUpcomingLaunches()` — filtered count of launches that haven't happened yet
+- `getNextLaunchLabel()` — sorts by date and grabs the soonest one, formatted like "Sep 14"
+- `groupLaunchesByStatus()` — a `reduce` that tallies how many launches are go/review/hold
+- `buildDashboardStats()` — bundles all of the above into one object, so later code just calls this once instead of four separate functions
+
+I tested it by concatenating it with `mission-data.js` and running it through Node, and the output matched the stats row that's currently hard-coded into the HTML exactly: 4 missions, 3 agencies, 4 upcoming launches, next launch "Sep 14". That match is the whole point it means Day 4 can replace those hand-typed numbers with real calculated ones and nothing on the page should visually change, because the math already checks out.
+
+Still nothing wired into the DOM.
