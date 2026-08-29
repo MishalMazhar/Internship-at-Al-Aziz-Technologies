@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to your Orbit Log account.">
+    <title>Sign In — Orbit Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <a href="index.html" class="auth-back">← Back to Orbit Log</a>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <span class="mission-patch">
+                    <img src="images/rocket.svg" alt="Orbit Log rocket logo">
+                </span>
+                <h1>Welcome back</h1>
+                <p>Sign in to track your missions and manage your alerts.</p>
+            </div>
+
+            <form class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" minlength="8" required>
+                </div>
+
+                <div class="auth-row">
+                    <label class="auth-remember">
+                        <input type="checkbox" name="remember">
+                        Remember me
+                    </label>
+                    <a href="forgot-password.html" class="auth-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-submit">Sign In</button>
+            </form>
+
+            <div class="auth-divider">or</div>
+
+            <p class="auth-footer-text">
+                Don't have an account? <a href="signup.html" class="auth-link">Sign up</a>
+            </p>
+
+            <div class="auth-note">
+                <strong>Heads up:</strong> this is a frontend-only demo built as part of a practice project. There's no real backend yet, so signing in won't actually authenticate anything — it's here to practice building a proper auth flow.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

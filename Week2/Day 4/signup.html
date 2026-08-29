@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your Orbit Log account.">
+    <title>Sign Up — Orbit Log</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <a href="index.html" class="auth-back">← Back to Orbit Log</a>
+
+        <div class="auth-card">
+            <div class="auth-header">
+                <span class="mission-patch">
+                    <img src="images/rocket.svg" alt="Orbit Log rocket logo">
+                </span>
+                <h1>Create your account</h1>
+                <p>Join Orbit Log to track missions and get launch alerts.</p>
+            </div>
+
+            <form class="auth-form" novalidate>
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="password" placeholder="At least 8 characters" minlength="8" required>
+                    <div class="password-strength" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                    <p class="field-hint">Use at least 8 characters, with a number and a symbol.</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupConfirm">Confirm Password</label>
+                    <input type="password" id="signupConfirm" name="confirmPassword" placeholder="Re-enter your password" minlength="8" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary auth-submit">Create Account</button>
+            </form>
+
+            <div class="auth-divider">or</div>
+
+            <p class="auth-footer-text">
+                Already have an account? <a href="login.html" class="auth-link">Sign in</a>
+            </p>
+
+            <div class="auth-note">
+                <strong>Heads up:</strong> this is a frontend-only demo. No account actually gets created yet — real form validation and a working backend come later in the internship.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
