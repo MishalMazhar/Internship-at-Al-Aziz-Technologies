@@ -1,20 +1,23 @@
-# Day 3 
+# Day 4 
 
-**Task:** Build data-processing exercises using arrays and objects.
+**Task:** Build an interactive application using JavaScript. Fetch data from a public REST API.
 
 ## What I actually did
 
-**`js/exercises-day3.js`** covers all the new syntax on its own — destructuring, spread, rest, default parameters, all six array methods, object methods (`Object.keys`, `Object.values`, `Object.entries`), optional chaining, and nullish coalescing. I ran it with `node exercises-day3.js` in the terminal to actually check the output instead of just assuming it worked, and it matched what I expected for every single example.
+Everything lives in `js/main.js` now, which pulls together every file from the whole week:
 
-**`js/data-processing.js`** is the real one. It takes the actual mission and launch data from Day 1's `mission-data.js` and calculates:
+**Stats row** the four numbers at the top (missions, agencies, launches, next launch date) are no longer typed by hand. They're calculated live from the real data using `buildDashboardStats()` from Day 3, and I checked the output matched the old hard-coded numbers exactly before trusting it.
 
-- `countMissions()` — how many missions total
-- `countUniqueAgencies()` — unique agency count, using a `Set` to drop duplicates
-- `countUpcomingLaunches()` — filtered count of launches that haven't happened yet
-- `getNextLaunchLabel()` — sorts by date and grabs the soonest one, formatted like "Sep 14"
-- `groupLaunchesByStatus()` — a `reduce` that tallies how many launches are go/review/hold
-- `buildDashboardStats()` — bundles all of the above into one object, so later code just calls this once instead of four separate functions
+**Mission cards** built entirely with `createElement`/`innerHTML` from the `missions` array. Each card also got a save button (☆ / ★) that saves to Local Storage, so if you save a mission and refresh the page, it's still saved. That part actually surprised me when it worked on the first refresh test.
 
-I tested it by concatenating it with `mission-data.js` and running it through Node, and the output matched the stats row that's currently hard-coded into the HTML exactly: 4 missions, 3 agencies, 4 upcoming launches, next launch "Sep 14". That match is the whole point it means Day 4 can replace those hand-typed numbers with real calculated ones and nothing on the page should visually change, because the math already checks out.
+**Launch schedule filtering** added four buttons above the table (All / Go / Under Review / Hold). Clicking one re-renders the table using `filterLaunchesByStatus()` from Day 2, and shows a "no launches match" message if a filter comes up empty instead of just leaving a blank table.
 
-Still nothing wired into the DOM.
+**Real form validation** the "Join the Log" form now actually checks that you typed a name and something that looks like a real email, shows an error message right under the field if not, and only shows the success message (built with `buildAlertMessage()` from Day 2) once both are valid.
+
+**Mobile nav auto-close** small thing, but the mobile menu now closes itself after you tap a link instead of staying open and covering the section you just navigated to.
+
+**Live astronaut count** this is the actual "fetch data from a public REST API" part. It calls `https://api.open-notify.org/astros.json`, a free public API that returns how many people are currently in space and their names, and renders that into a new "Live: Astronauts Currently in Space" section. Wrapped in try/catch so if the request fails, it shows an error message instead of a blank space.
+
+## What's not done yet
+
+Nothing here talks to a real backend for the actual site data the missions and launches are still the same sample data from Day 1, just rendered dynamically now instead of typed into HTML. Connecting to a real launch API with proper loading states and caching is Week 5's job.
