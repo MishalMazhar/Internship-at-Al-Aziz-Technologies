@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Orbit Log — a mission-control style dashboard for tracking rocket launches, featured missions, and your own mission-watch log.">
+    <title>Orbit Log — Mission Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="#top" class="skip-link">Skip to main content</a>
+
+    <!-- HEADER + NAV -->
+    <header class="site-header">
+        <a href="#top" class="logo">
+            <span class="mission-patch">
+                <img src="images/rocket.svg" alt="Orbit Log rocket logo" class="logo-icon">
+            </span>
+            ORBIT LOG
+        </a>
+
+        <input type="checkbox" id="navToggle" class="nav-toggle-input">
+        <label for="navToggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+        </label>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#missions">Missions</a></li>
+                <li><a href="#schedule">Launch Schedule</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li class="mobile-only"><a href="login.html">Sign In</a></li>
+                <li class="mobile-only"><a href="#logbook">Get Notified</a></li>
+            </ul>
+        </nav>
+
+        <a href="login.html" class="nav-signin">Sign In</a>
+        <a href="#logbook" class="nav-cta">Get Notified</a>
+    </header>
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <span class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Live Mission Dashboard
+                </span>
+                <h1>Track every launch. Log every mission.</h1>
+                <p>
+                    Orbit Log brings every upcoming launch, active mission, and agency
+                    into one dashboard — so you never miss a liftoff, and never lose
+                    track of what you've watched leave the pad.
+                </p>
+                <div class="hero-actions">
+                    <a href="#logbook" class="btn btn-primary">Get Notified</a>
+                    <a href="#missions" class="btn btn-secondary">Browse Missions</a>
+                </div>
+            </div>
+
+            <div class="orbit-visual" role="img" aria-label="Animated illustration of a satellite orbiting a planet">
+                <div class="orbit-planet"></div>
+                <div class="orbit-ring orbit-ring-inner"></div>
+                <div class="orbit-ring orbit-ring-outer">
+                    <span class="orbit-sat">
+                        <img src="images/satellite.svg" alt="">
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK STATS (Flexbox cards) -->
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Active Missions</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Partner Agencies</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Upcoming Launches</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">Sep 14</span>
+                <span class="stat-label">Next Launch</span>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="how-it-works">
+            <h2>How Orbit Log Works</h2>
+            <p class="section-intro">Three steps between "I heard there's a launch soon" and actually watching it happen.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <img src="images/probe.svg" alt="" class="step-icon">
+                    <h3>Discover</h3>
+                    <p>Browse featured missions across rockets, rovers, satellites, and deep-space probes.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <img src="images/rocket.svg" alt="" class="step-icon">
+                    <h3>Track</h3>
+                    <p>Check the launch schedule for vehicle, agency, and current mission status at a glance.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <img src="images/satellite.svg" alt="" class="step-icon">
+                    <h3>Get Notified</h3>
+                    <p>Join the log with your preferred contact method and never miss a liftoff.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about">
+            <h2>Mission Control, Simplified</h2>
+            <p>
+                Whether you're into rockets, rovers, or deep-space probes, Orbit Log
+                keeps every mission in one place — launch dates, agencies, vehicles,
+                and status, updated as missions progress from pad to orbit.
+            </p>
+        </section>
+
+        <!-- FEATURED MISSIONS (list-based cards) -->
+        <section id="missions" class="missions">
+            <h2>Featured Missions</h2>
+            <ul class="mission-list">
+                <li class="mission-card">
+                    <span class="mission-category">Rocket</span>
+                    <img src="images/rocket.svg" alt="Rocket launch vehicle icon">
+                    <h3>Helios-3</h3>
+                    <p>Heavy-lift test flight validating a new reusable booster stage.</p>
+                    <a href="#schedule" class="mission-link">View in schedule →</a>
+                </li>
+                <li class="mission-card">
+                    <span class="mission-category">Rover</span>
+                    <img src="images/rover.svg" alt="Planetary rover icon">
+                    <h3>Vega Surface Rover</h3>
+                    <p>Six-wheeled rover mapping surface minerals across a 40km transect.</p>
+                    <a href="#schedule" class="mission-link">View in schedule →</a>
+                </li>
+                <li class="mission-card">
+                    <span class="mission-category">Satellite</span>
+                    <img src="images/satellite.svg" alt="Orbital satellite icon">
+                    <h3>Aurora Relay</h3>
+                    <p>Communications satellite extending deep-space relay coverage.</p>
+                    <a href="#schedule" class="mission-link">View in schedule →</a>
+                </li>
+                <li class="mission-card">
+                    <span class="mission-category">Probe</span>
+                    <img src="images/probe.svg" alt="Deep space probe icon">
+                    <h3>Kepler Reach Probe</h3>
+                    <p>Flyby probe gathering atmospheric data on the outer moons.</p>
+                    <a href="#schedule" class="mission-link">View in schedule →</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- LAUNCH SCHEDULE (table) -->
+        <section id="schedule" class="schedule">
+            <h2>Upcoming Launch Schedule</h2>
+            <p class="table-note">Sample data for practice purposes.</p>
+            <div class="table-scroll">
+                <table class="launch-table">
+                    <thead>
+                        <tr>
+                            <th>Mission</th>
+                            <th>Agency</th>
+                            <th>Vehicle</th>
+                            <th>Launch Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Helios-3</td>
+                            <td>Meridian Aerospace</td>
+                            <td>Helios Heavy</td>
+                            <td>2026-09-14</td>
+                            <td><span class="status status-go">Go</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vega Surface Rover</td>
+                            <td>Northgate Exploration</td>
+                            <td>Vega-IX</td>
+                            <td>2026-10-02</td>
+                            <td><span class="status status-review">Under Review</span></td>
+                        </tr>
+                        <tr>
+                            <td>Aurora Relay</td>
+                            <td>Skyline Orbital</td>
+                            <td>Falcon Nine-class</td>
+                            <td>2026-09-28</td>
+                            <td><span class="status status-go">Go</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kepler Reach Probe</td>
+                            <td>Meridian Aerospace</td>
+                            <td>Odyssey-II</td>
+                            <td>2026-11-19</td>
+                            <td><span class="status status-hold">Hold</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- LOG BOOK / SIGN UP FORM -->
+        <section id="logbook" class="logbook">
+            <h2>Join the Log</h2>
+            <p>Get notified before launches and keep your own mission-watch history.</p>
+
+            <form class="logbook-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">Primary Interest</label>
+                    <select id="interest" name="interest">
+                        <option value="launches">Launch Vehicles</option>
+                        <option value="rovers">Rovers &amp; Landers</option>
+                        <option value="satellites">Satellites</option>
+                        <option value="probes">Deep Space Probes</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Notify me by</legend>
+                    <label class="radio-label"><input type="radio" name="notify" value="email" checked> Email</label>
+                    <label class="radio-label"><input type="radio" name="notify" value="sms"> SMS</label>
+                    <label class="radio-label"><input type="radio" name="notify" value="none"> Don't notify me</label>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="message">Notes (optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Anything you want us to know?"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign Up for Mission Alerts</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#top" class="logo">
+                    <span class="mission-patch">
+                        <img src="images/rocket.svg" alt="Orbit Log rocket logo" class="logo-icon">
+                    </span>
+                    ORBIT LOG
+                </a>
+                <p class="footer-tagline">Track every launch. Log every mission.</p>
+            </div>
+
+            <nav class="footer-links">
+                <h4>Dashboard</h4>
+                <ul>
+                    <li><a href="#missions">Missions</a></li>
+                    <li><a href="#schedule">Launch Schedule</a></li>
+                    <li><a href="#logbook">Join the Log</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-status">
+                <h4>System Status</h4>
+                <p><span class="status status-go">Go</span> All systems nominal</p>
+                <p class="footer-updated">Last synced: 2026-08-18</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Orbit Log. Mission data shown is sample data for practice purposes.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
