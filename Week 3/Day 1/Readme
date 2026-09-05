@@ -1,0 +1,18 @@
+# Day 1 
+
+**Task:** Create a React project using Vite. Build basic reusable components.
+
+## What I actually did
+
+Ran `npm create vite@latest . -- --template react`, then `npm install`. That's the whole setup no webpack config, no manual Babel setup, just a working dev server and build pipeline out of the box.
+
+Then I stripped out the default Vite starter content and rebuilt `App.jsx` with actual project components:
+
+- `Header.jsx` — logo and nav links, no interactivity yet
+- `Hero.jsx` — the intro section, carried over from the Week 2 HTML almost unchanged, just converted to JSX
+- `Footer.jsx` — same idea
+- `Button.jsx` — the one I'm actually proud of today. It's a genuinely reusable component: pass it a `label` and a `variant`, optionally an `href`, and it renders either a styled `<button>` or a styled `<a>` depending on what you gave it. I rendered it three different ways in a demo section just to prove to myself it actually works as advertised, not just in theory.
+
+Ran `npm run build` at the end to make sure the whole thing actually compiles — 20 modules, no errors. Small thing, but it's the first time in this internship a build tool has told me whether my code is actually correct before a human (or a browser) had to point it out.
+
+The "Component Reuse Demo" section in `App.jsx` is throwaway — it's not part of the real site, it's just there to prove the Button component works before real content replaces it starting Day 2.
