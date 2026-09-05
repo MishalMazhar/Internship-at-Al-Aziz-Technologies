@@ -1,0 +1,25 @@
+# Day 4 
+
+**Task:** Refactor an existing React application into a clean component structure.
+
+## What I actually did
+
+Reorganized the whole project into real folders:
+
+```
+src/
+  data/         → missions.js, launches.js
+  utils/        → missionHelpers.js, statsHelpers.js
+  hooks/        → useLocalStorage.js, useSavedMissions.js, useAstronauts.js
+  components/   → every UI piece
+```
+
+**Fixed the saved-mission state problem.** `MissionCard` no longer manages its own saved state it takes `isSaved` and `onToggleSave` as props and calls `onToggleSave(mission.id)` when clicked, same pattern I already knew from Day 2's props lesson, just applied correctly this time. The actual state now lives in `App.jsx`, via the new `useSavedMissions` hook, and is backed by `useLocalStorage` underneath — so saved missions now genuinely persist across a page refresh, which they didn't before.
+
+**Built `useLocalStorage.js`** as a generic hook works like `useState`, except the value automatically syncs to Local Storage using a `useEffect` with the value in its dependency array. Any future feature that needs to remember something can just reuse this hook instead of writing localStorage logic again.
+
+**Built `useAstronauts.js`**, pulling all the fetch/loading/error logic out of the component and into its own hook. `LiveAstronauts.jsx` went from a component that had to handle fetching AND displaying, to one that just asks the hook for `{ data, isLoading, error }` and renders based on whichever is true. Much easier to read.
+
+**Extracted `statsHelpers.js` and `missionHelpers.js`** as pure utility functions with zero React in them just plain JavaScript that takes data in and returns data out. Kept them separate from components on purpose, since pure functions are much easier to reason about (and would be much easier to test, if I get to writing tests later).
+
+Ran `npm run build` again after all of this to make sure the refactor didn't quietly break anything still 34 modules, still builds clean.
