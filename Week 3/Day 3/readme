@@ -1,0 +1,13 @@
+# Day 3 
+
+**Task:** Build a searchable and filterable React application.
+
+## What I actually did
+
+**`MissionList.jsx`** now renders missions with real `.map()` instead of the three hand-written `<MissionCard>` calls from Day 2. Added a search input above it — typing filters the list live, matching against mission names, case-insensitive. When nothing matches, it shows a message instead of an empty list, using a ternary right inside the JSX.
+
+**`LaunchTable.jsx`** and **`FilterBar.jsx`** — the filter buttons (All / Go / Under Review / Hold) actually filter which table rows show, using the same `filterLaunchesByStatus` utility function from Week 2. The new part is a `useEffect` that updates the actual browser tab title to reflect the current filter, like "Orbit Log — 2 Go launch(es)". It's a small, slightly silly feature, but it's genuinely the first thing in this whole React app that reaches outside of just rendering JSX.
+
+I got the dependency array wrong on my first try — left it empty, and the effect only ever ran once on load, so the title never updated no matter what filter I clicked. Added `[activeFilter, visibleLaunches.length]` to the array and it started working immediately. Good reminder that an empty dependency array means "only run once," not "run whenever something inside changes."
+
+Kept `MissionCard`'s save button exactly as it was on Day 2 — still managing its own local state, not lifted up yet. That's still coming on Day 4.
