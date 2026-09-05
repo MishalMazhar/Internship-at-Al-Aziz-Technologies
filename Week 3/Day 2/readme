@@ -1,0 +1,15 @@
+# Day 2 
+
+**Task:** Build reusable cards. Build counters and interactive components.
+
+## What I actually did
+
+**`Counter.jsx`** is the classic exercise a number, a plus button, a minus button, `useState` tracking the current value. Not part of the real site, just there to prove I understand state and click events before using them for something real.
+
+**`MissionCard.jsx`** got its first real interactivity — a save button using `useState` that toggles a star between ☆ and ★. Rendered it three times manually in `App.jsx` (no `.map()` yet, that's tomorrow) just to prove the same component works correctly with three different missions passed in as props.
+
+**`LogbookForm.jsx`** is a simplified version of the real sign-up form — just name and email, both controlled inputs, no validation yet. Typing in the boxes updates React state on every keystroke, and submitting shows a basic thank-you message using whatever name was typed in.
+
+**`Header.jsx`** got a real mobile menu now — a hamburger button that toggles `isMenuOpen` state, replacing what would've been a pure-CSS checkbox trick in a non-React project. Felt like a good example of something React makes more natural: the menu's open/closed state is just a variable, not a DOM class being toggled by hand.
+
+Being honest about the current limitation: `MissionCard`'s saved state lives inside the card itself, which means it's not actually persistent or shared with anything else on the page. That's a real gap, not something I'm hiding — I already know from thinking ahead that "lifting state up" to a shared parent is how you fix exactly this problem, and that's explicitly a Day 4 topic, so I'm leaving it as-is for now instead of solving it early.
