@@ -1,0 +1,45 @@
+# Day 5 
+
+**Task:** Complete Week 3 revision. Deliver a working React project, GitHub repo, README, clean component structure, and a functional demonstration.
+
+## What I actually did
+
+Went back through all four days and actually tried to break things instead of assuming they still worked. Found two real issues, both documented in the Tasks notes, both actually fixed here — not just written about:
+
+**Fix 1 — the `useEffect` cleanup bug.** In `LaunchTable.jsx`, I had one `useEffect` doing two jobs: updating the tab title on every filter change, AND restoring the original title on unmount, using a cleanup function. The problem: React runs a cleanup function before *every* re-run of an effect, not just when the component actually unmounts. So every single filter click was quietly resetting the title back to the previous value and then immediately overwriting it again. It never looked broken because both things happened synchronously before the browser repainted, but the comment claiming "restore on unmount" was just wrong. Split it into two separate effects one for the filter-driven update (no cleanup needed), one purely for the real unmount restoration (empty dependency array, so its cleanup only fires once, for real). Used `useRef` to capture the original title once, since reading it doesn't need to cause a re-render.
+
+**Fix 2 — the mission search empty-state message.** `MissionList.jsx`'s "no results" message only ever mentioned the search term, even when a category filter was also narrowing things down. Filter to "Rover" and search for something that only matches a "Probe," and the message would just say `No missions match "your search"` with no mention that the category filter was part of why nothing showed up. Fixed it to mention both when relevant.
+
+Both fixes were verified with a real `npm run build` afterward — not just eyeballed.
+
+## Clean component structure
+
+By the end of the week, `src/` looks like this:
+
+```
+src/
+├── data/           → missions.js, launches.js (the actual content)
+├── utils/          → missionHelpers.js, statsHelpers.js (pure functions, no React)
+├── hooks/          → useLocalStorage, useSavedMissions, useAstronauts (custom hooks)
+├── components/     → 9 components, one file each
+├── App.jsx         → composes everything, owns the one piece of state that's shared (saved missions)
+└── main.jsx        → the actual entry point
+```
+
+The split between `data`, `utils`, `hooks`, and `components` wasn't arbitrary — `utils` has zero React in it (I could copy those two files into a plain Node script and they'd still work, which is exactly how I tested them originally back in Week 2). `hooks` is where all the "this needs to remember something across renders" logic lives. `components` only handles what things look like and how they respond to clicks. Keeping those separated is what made finding today's two bugs faster I knew immediately that a title-update bug had to be in a component (since only components have `useEffect`), not in `utils`.
+
+## Functional demonstration
+
+Starting from a static two-week-old HTML page, Orbit Log is now:
+- A real Vite + React project (`npm install && npm run build` works cleanly, verified after every single day this week, not just at the end)
+- Searchable and filterable by both text and category
+- Backed by three custom hooks, including one that persists saved missions across a real page refresh
+- Pulling live data from a public API with actual loading/error/empty states, not just a happy path
+
+## What's not carried over yet
+
+The login, sign up, and forgot password pages from Week 2 are still separate static HTML files — they didn't get rebuilt as React pages this week. That's intentional: turning them into real pages within this app needs client-side routing, which is React Router, a Week 5 topic. Building fake in-app "pages" without real routing felt like it'd teach the wrong lesson.
+
+## What's next
+
+Week 4 is TypeScript and Tailwind. Curious whether TypeScript catches either of today's two bugs at the type level, or whether both would've slipped through anyway since neither was really a type mismatch — more a timing and logic mistake.
